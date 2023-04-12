@@ -5,6 +5,8 @@ from django.contrib.gis.db import models as gismodels
 from django.contrib.gis.geos import Point
 from django.contrib.auth.models import User
 
+import geocoder
+import os
 
 # Create your models here.
 
@@ -68,3 +70,14 @@ class Job(models.Model):
     lastDate = models.DateTimeField(default=return_date_time)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        g = geocoder.mapquest(self.address, key=os.environ.get('GEOCODER_API'))
+
+        print(g)
+
+        lng = g.lng
+        lat = g.lat
+
+        self.point = Point(lng, lat)
+        super(Job, self).save(*args, **kwargs)
