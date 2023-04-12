@@ -52,3 +52,7 @@ python3 manage.py runserver
 
 ## On the webpage, created a new job
 http://localhost:8000/admin
+
+
+# Get data from Insomnia
+http://localhost:8000/api/jobs/
