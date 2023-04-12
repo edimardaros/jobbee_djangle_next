@@ -56,3 +56,10 @@ http://localhost:8000/admin
 
 # Get data from Insomnia
 http://localhost:8000/api/jobs/
+
+
+# Get Stats of Topic
+Insert job titles with java description, for example, and filter like this:
+
+http://localhost:8000/api/stats/java
+http://localhost:8000/api/stats/python
