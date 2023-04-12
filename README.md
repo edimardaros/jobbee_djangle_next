@@ -33,3 +33,22 @@ export GEOS_LIBRARY_PATH=/opt/homebrew/lib/libgeos_c.dylib
 
 # Start project
 `python3 manage.py runserver`
+
+
+# Created app job
+python3 manage.py startapp job
+
+# Modified models.py Jobs
+
+
+# Create account and get the key from Geocoder
+https://developer.mapquest.com/user/me/profile
+
+# 12. Run Migrations & Create first Job
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver
+
+## On the webpage, created a new job
+http://localhost:8000/admin
